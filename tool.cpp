@@ -4,7 +4,7 @@
 using namespace std;
 
 #define MAX_LEN 16
-#define INF INT_MAX
+#define INF INT_MAX / 2
 #define UND -1
 
 typedef unsigned int bit;
@@ -13,7 +13,7 @@ typedef vector<vector<int> > adjacency_t;
 typedef adjacency_t adj_t;
 
 #define COMB(n) (1 << (n)) //n bit combination
-#define SEE(mask, n) bitset<(sizeof(bit)) * 8>(mask).to_string().substr(sizeof(bit) * 8 - n)
+#define SEE(mask) bitset<(sizeof(bit)) * 8>(mask).to_string().substr(sizeof(bit) * 8 - n)
 
 void print2DVector(vector<vector<int>> &v) {
     for (int i = 0; i < v.size(); i++) {
