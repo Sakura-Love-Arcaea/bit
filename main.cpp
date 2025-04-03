@@ -35,23 +35,27 @@ int main() {
 
     
 
-    // vector<bit> c = bitCombination(n, 1);
-    // for (int i = 0; i < c.size(); i++) {
-    //     cout << SEE(c[i], n) << endl;
+    vector<bit> c = bitCombination(n, 1);
+    for (int i = 0; i < c.size(); i++) {
+        cout << SEE(c[i], n) << endl;
+    }
+    #define ORDER(x) 1 << x
+    #define REMOVE(a, order) a ^ order
+    #define HAVE(a, order) a & order
+
+    // bit example = 0b0011; // 已經去除vi 算min的。
+    // for (int i = 0; i < n; i++) {
+    //     bit order = ORDER(i);
+    //     if (HAVE(example, order)) {
+    //         cout << "vi to " << SEE(order, n) << " , pass " << SEE(REMOVE(example, order), n) << endl;
+    //     }
     // }
 
-    bit example = 0b0101;
-    // put [2] or [4]
-    for (int i = 0; i < n; i++) {
-        bit get1 = example & (1 << i);
-        if (get1 != 0) {
-            cout << SEE(get1, n) << endl;
-        } else {
-            continue;
-        }
-            
-        
-    }
+    bit example2 = 0b0011;
+    bit passInv = ~example2;
+    cout << SEE(passInv, n) << endl;
+
+
 
 
 
