@@ -17,7 +17,7 @@ typedef adjacency_t adj_t;
 #define SEE(mask) bitset<(sizeof(bit)) * 8>(mask).to_string().substr(sizeof(bit) * 8 - n)
 
 #define SHIFT(x) 1 << x
-#define LEFTMASK(x) 1 << (n - 1)
+#define LEFTMASK 1 << (n - 1)
 #define REMOVE(a, order) (a ^ order)
 #define ISONE(a, order) (a & order)
 
@@ -58,7 +58,7 @@ int main() {
     for (int i = 0; i < c.size(); i++) {
         bit subset = c[i]; 
         cout << "subset: " << SEE(subset) << endl;
-        bit passes = (i != c.size() - 1) ? (subset | LEFTMASK(n)) : subset; // when not last, pass v1
+        bit passes = (i != c.size() - 1) ? (subset | LEFTMASK) : subset; // when not last, pass v1
         for (int i = 0; i < n; i++) {
             bit possible = SHIFT(i); 
             if (!ISONE(passes, possible)) {
